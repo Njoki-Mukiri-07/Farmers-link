@@ -1,0 +1,527 @@
+:root {
+    --primary-green: #1B4332;
+    --light-green: #2D6A4F;
+    --accent-gold: #e2b17a;
+    --white: #ffffff;
+    --gray: #f8f9fa;
+    --dark-bg: #ffffff;
+}
+
+* { margin:0; padding:0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; scroll-behavior: smooth; }
+
+/* Utilities */
+.center-container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+.section-padding { padding: 80px 0; overflow: hidden; }
+.white-bg { background: var(--white); }
+.light-gray-bg { background: var(--gray); }
+.green-bg { background: var(--primary-green); color: white; }
+.green-text { color: var(--primary-green); }
+.section-title { text-align: center; margin-bottom: 40px; font-size: 2rem; font-weight: 800; text-transform: uppercase; }
+
+/* Top Bar Styling */
+:root {
+    --primary-green: #1B4332;
+    --dark-green: #002813;   /* This is the deep green you want */
+    --accent-gold: #e2b17a;
+    --white: #ffffff;
+}
+.top-bar { background-color: #fdf5e6; padding: 8px 5%; border-bottom: 1px solid rgba(0,0,0,0.1); }
+.top-bar-container { display: flex; justify-content: flex-end; }
+.contact-info { display: flex; gap: 20px; }
+.contact-item, .contact-item a { font-size: 0.8rem; font-weight: 600; color: var(--primary-green); text-decoration: none; }
+
+.top-bar-container {
+    display: flex;
+    justify-content: flex-end; 
+    align-items: center;
+}
+
+/* ... keep your other contact-info/item styles ... */
+
+/* --- DESKTOP NAVBAR (Default) --- */
+.navbar { 
+    background: var(--dark-green); 
+    padding: 1rem 5%; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    height: 80px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-img { height: 55px; width: auto; }
+
+.logo-text { display: flex; flex-direction: column; }
+
+.brand { 
+    color: var(--accent-gold); 
+    font-weight: 800; 
+    font-size: 1.1rem; 
+    letter-spacing: 1px;
+    line-height: 1.2;
+}
+
+.slogan { 
+    color: #fff; 
+    font-size: 0.65rem; 
+    font-weight: 600; 
+    letter-spacing: 1.5px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links a { 
+    color: #fff; 
+    text-decoration: none; 
+    margin-left: 25px; 
+    font-size: 0.9rem; 
+    font-weight: 600;
+    transition: 0.3s;
+    white-space: nowrap;
+}
+
+.nav-links a:hover, .nav-links a.active { 
+    color: var(--accent-gold); 
+}
+
+/* Hide Hamburger on Desktop */
+.menu-toggle {
+    display: none;
+    color: var(--accent-gold);
+    font-size: 1.6rem;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+/* --- MOBILE NAVIGATION (768px and below) --- */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block; /* Show hamburger */
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%; /* Hidden off-screen */
+        width: 280px; /* Menu width */
+        height: 100vh;
+        background: var(--dark-green);
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 100px 30px; /* Space for the top */
+        transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: -10px 0 20px rgba(0,0,0,0.4);
+        display: flex; /* Always flex, but moved via 'right' */
+    }
+
+    /* This class is added by JavaScript */
+    .nav-links.active {
+        right: 0; /* Slide into view */
+    }
+
+    .nav-links a {
+        margin: 0;
+        padding: 15px 0;
+        width: 100%;
+        font-size: 1.1rem;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    
+    .slogan { display: none; } /* Simplify logo for mobile */
+}
+
+/* HERO */
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                url('https://images.unsplash.com/photo-1560493676-04071c5f467b') center/cover;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    color: white;
+}
+
+/* Container */
+.hero-text {
+    position: relative;
+    text-align: center;
+}
+
+/* FRONT TEXT */
+.hero-text h1 {
+    font-size: 42px;
+    position: relative;
+    z-index: 2;
+}
+
+/* BACKGROUND SHADOW WORD */
+.shadow-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 90px;
+    font-weight: bold;
+    color: rgba(255,255,255,0.08); /* very light */
+    letter-spacing: 10px;
+    z-index: 1;
+}
+
+.echo-text::before {
+  transition: 0.3s ease;
+}
+
+/* CONTACT SECTION */
+.contact-section {
+    display: flex;
+    padding: 40px 8%;
+    gap: 40px;
+}
+
+/* FORM */
+.form-box {
+    flex: 1;
+}
+
+.form-box h2 {
+    margin-bottom: 20px;
+}
+
+.row {
+    display: flex;
+    gap: 10px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+}
+
+textarea {
+    height: 120px;
+}
+
+button {
+    background: #002813;
+    color: white;
+    padding: 12px;
+    border: none;
+    width: 100%;
+    hover:var(--accent-gold)
+}
+
+
+
+/* INFO BOX */
+/* Typography & Container */
+.info-box {
+    flex: 1;
+    font-family: 'Inter', sans-serif; /* Clean, modern font */
+}
+
+.info-title {
+    color: #E2B17A;
+    font-weight: 800;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Info Row Layout */
+.info {
+    background: #ffffff; /* White background for a cleaner look */
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 12px;
+    display: flex; /* Aligns icon and text side-by-side */
+    align-items: center;
+    gap: 20px;
+    border: 1px solid #eee; /* Subtle border instead of gray background */
+    transition: 0.3s ease;
+}
+
+.info:hover {
+    border-color: #1B4332; /* Sygad Green border on hover */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+/* Icon Styling */
+.info-icon {
+    width: 45px;
+    height: 45px;
+    background: #1B4332; /* Your primary green */
+    color: #E2B17A;      /* Your gold accent */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+/* Text Styling */
+.info-text p {
+    color: #1B4332 !important;
+    font-weight: 700;
+    font-size: 0.95rem;
+    margin-bottom: 4px;
+    text-transform: none;
+}
+
+.info-text span {
+    color: #555555 !important;
+    font-size: 0.9rem;
+    display: block;
+    line-height: 1.4;
+}
+
+.schedule {
+    font-size: 0.75rem !important;
+    color: #888 !important;
+    font-style: italic;
+    margin-bottom: 2px;
+}
+/* SECTION */
+.locations-section {
+    padding: 60px 0;
+    background: #fdf5e6;
+}
+
+.section-title {
+    color: #E2B17A;
+    text-align: center;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+}
+
+.maps-wrapper {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.map-card {
+    position: relative;
+    width: 500px;
+    height: 350px;
+    background: #002813;
+    overflow: hidden;
+    border-radius: 12px;
+    border: 1px solid rgba(226, 177, 122, 0.3);
+}
+
+.map-card iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    filter: grayscale(100%) invert(90%) contrast(90%); /* Makes map look "Lab/Scientific" */
+}
+
+/* THE OVERLAY LAYER */
+.map-overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(11, 28, 36, 0.85); /* Dark tint */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.5s ease;
+    cursor: pointer;
+    pointer-events: none; /* Allows you to click the map "through" the text */
+}
+
+.map-card:hover .map-overlay {
+    background: rgba(11, 28, 36, 0.2); /* Reveal the map on hover */
+}
+
+/* TEXT ANIMATION LOGIC */
+.main-text-wrapper {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.base-text, .reveal-text {
+    font-size: 3.5rem;
+    color: #fff;
+    margin: 0;
+    font-family: sans-serif;
+    font-weight: 800;
+    text-transform: lowercase;
+    transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.reveal-text {
+    position: absolute;
+    top: 0; left: 0;
+    color: #E2B17A; /* Gold color for the reveal */
+    transform: translateY(100%);
+}
+
+.icon-circle {
+    border: 2px solid white;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.sub-label {
+    color: #BDC3C7;
+    font-size: 0.9rem;
+    margin-top: 10px;
+    opacity: 1;
+    transition: 0.5s;
+}
+
+/* HOVER STATES */
+.map-card:hover .base-text { transform: translateY(-100%); }
+.map-card:hover .reveal-text { transform: translateY(0); }
+.map-card:hover .sub-label { opacity: 0; } /* Hide sub-text to see map better */
+
+/* Mobile */
+@media (max-width: 900px) {
+    .maps-wrapper { flex-direction: column; align-items: center; }
+    .map-card { width: 90%; }
+}
+
+/* RESPONSIVE */
+@media(max-width: 768px) {
+
+    .nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .contact-section {
+        flex-direction: column;
+    }
+
+    .locations {
+        flex-direction: column;
+    }
+
+    .row {
+        flex-direction: column;
+    }
+}
+
+.shop-footer {
+    background-color: #002813; /* Your Deep Green/Dark Blue */
+    color: #fdf5e6;
+    padding: 60px 0 0;
+    border-top: 4px solid #e2b17a; /* Gold Accent from PDF logo */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.footer-layout {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding-bottom: 40px;
+}
+
+.footer-col {
+    flex: 1;
+    min-width: 250px;
+}
+
+.footer-heading {
+    color: #e2b17a;
+    font-size: 1.1rem;
+    letter-spacing: 1.5px;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+/* Red underline like a stamp or physical mark */
+.footer-heading::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 40px;
+    height: 2px;
+    background-color: #e2b17a;
+}
+
+.tagline {
+    font-style: italic;
+    margin-bottom: 15px;
+    opacity: 0.9;
+}
+
+.contact-list {
+    list-style: none;
+    padding: 0;
+}
+
+.contact-list li {
+    margin-bottom: 12px;
+}
+
+.contact-list a {
+    color: #fdf5e6;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.3s;
+}
+
+.contact-list a:hover {
+    color: #e2b17a;
+}
+
+.web-link-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #e2b17a;
+    text-decoration: none;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.footer-note {
+    font-size: 0.85rem;
+    line-height: 1.6;
+    opacity: 0.7;
+}
+
+.copyright-strip {
+    background-color: #fdf5e6; /* Your dark background */
+    color: #1B4332;           /* Your dark green text color */
+    font-weight: 500;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 0.8rem;
+    border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.footer-logo-small img {
+    height: 50px;
+    margin-top: 15px;
+    filter: grayscale(1) brightness(1.5); /* Makes it look like a clean stamp */
+}

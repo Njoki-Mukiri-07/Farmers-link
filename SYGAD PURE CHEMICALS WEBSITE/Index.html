@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services | Farmers Link Vet Agro</title>
+    <link rel="stylesheet" href="Index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+<div class="top-bar">
+    <div class="top-bar-container">
+        <div class="contact-info">
+            <span class="contact-item"><i class="fas fa-envelope"></i> <a href="mailto:farmerslinkvet@gmail.com">farmerslinkvet@gmail.com</a></span>
+            <span class="contact-item"><i class="fas fa-phone"></i> <a href="tel:+254706390116">+254 706 390116</a></span>
+            <span class="contact-item"><i class="fas fa-phone"></i> <a href="tel:+254727508240">+254 727 508240</a></span>
+        </div>
+    </div>
+</div>
+
+<header class="navbar">
+    <div class="logo-container">
+        <a href="Index.html">
+            <img src="FARMERS LINK IMAGES/farmers link logo.png.png" alt="Logo" class="logo-img">
+        </a>
+        <div class="logo-text">
+            <span class="brand">FARMERS LINK VET AGRO</span>
+            <span class="slogan">MORE THAN JUST A MEAL</span>
+        </div>
+    </div>
+
+    <div class="menu-toggle" id="mobile-menu">
+        <i class="fas fa-bars"></i>
+    </div>
+
+    <nav class="nav-links" id="nav-list"> 
+        <a href="Index.html">Home</a>
+        <a href="Products.html">Our Products</a>
+        <a href="About us.html">About us</a>
+        <a href="Services.html">Our Services</a>
+        <a href="Contact us.html">Contact us</a>
+    </nav>
+</header>
+
+
+<main class="hero-section">
+    <div id="hero-display" class="hero-display">
+        <img src="FARMERS LINK IMAGES/transitional mineral supplement for heifers.jpg.jpg" alt="Hero" id="main-hero-img">
+        <div class="hero-content-overlay">
+            <h1 id="hero-title" class="glow-text">High-Yield Dairy Meals</h1>
+            <p id="hero-desc">Maximize your milk production with every feed.</p>
+            <a href="Products.html" class="cta-button" id="hero-cta">Get Quality Feeds</a>
+        </div>
+    </div>
+
+    <section class="hero-nav-cards">
+        <div class="controller-card active" onclick="updateHero('dairy', this)">
+            <h3>High-Yield Dairy</h3>
+            <p>Maximize your milk production.</p>
+            <div class="progress-bar"><div class="progress-fill"></div></div>
+        </div>
+        <div class="controller-card" onclick="updateHero('vet', this)">
+            <h3>Trusted Vet Solutions</h3>
+            <p>Keep your livestock healthy.</p>
+            <div class="progress-bar"><div class="progress-fill"></div></div>
+        </div>
+        <div class="controller-card" onclick="updateHero('agro', this)">
+            <h3>Quality Agro-Inputs</h3>
+            <p>Best seeds and fertilizers.</p>
+            <div class="progress-bar"><div class="progress-fill"></div></div>
+        </div>
+    </section>
+</main>
+
+<section class="category-navigation">
+    <div class="container">
+        <h2 class="section-title">Shop by Livestock</h2>
+        <div class="category-scroll-wrapper">
+            <a href="Products.html#cattle" class="cat-hex-item">
+                <div class="hexagon-wrap"><div class="hex-inner"><img src="FARMERS LINK IMAGES/cow.png" alt="Cows"></div></div>
+                <span>Cattle</span>
+            </a>
+            <a href="Products.html#goats" class="cat-hex-item">
+                <div class="hexagon-wrap"><div class="hex-inner"><img src="FARMERS LINK IMAGES/goat.png" alt="Goats"></div></div>
+                <span>Goats & Sheep</span>
+            </a>
+            <a href="Products.html#poultry" class="cat-hex-item">
+                <div class="hexagon-wrap"><div class="hex-inner"><img src="FARMERS LINK IMAGES/chicken.png" alt="Poultry"></div></div>
+                <span>Poultry</span>
+            </a>
+            <a href="Products.html#swine" class="cat-hex-item">
+                <div class="hexagon-wrap"><div class="hex-inner"><img src="FARMERS LINK IMAGES/pig.png" alt="Swine"></div></div>
+                <span>Swine Range</span>
+            </a>
+            <a href="Products.html#clinicals" class="cat-hex-item">
+                <div class="hexagon-wrap"><div class="hex-inner"><img src="FARMERS LINK IMAGES/livestock.png" alt="Clinicals"></div></div>
+                <span>Clinicals</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<section class="services-compact">
+    <div class="notebook-anchor">
+        <div class="notebook-page">
+            <div class="notebook-text">
+                <small>INTERNAL NOTE</small>
+                <p>Direct lab link: <strong>Sygad Manufacturing</strong> department. Quality guaranteed.</p>
+            </div>
+            <div class="fold-triangle"></div>
+        </div>
+    </div>
+<section class="symptom-checker-section">
+    <div class="container">
+        <h2 class="section-title">Livestock Symptom Checker</h2>
+        <div class="checker-grid">
+            <div class="symptom-buttons">
+                <button onclick="checkSymptom('mastitis')">Mastitis / Udder Issues</button>
+                <button onclick="checkSymptom('bloat')">Bloat / Digestion</button>
+                <button onclick="checkSymptom('fever')">Fever / Loss of Appetite</button>
+                <button onclick="checkSymptom('weight')">Poor Weight Gain</button>
+            </div>
+            <div id="advice-box" class="advice-box">
+                <h4 id="advice-title">Select a symptom...</h4>
+                <p id="advice-text">Select a symptom from the left to get expert advice from Farmers Link Vet Agro.</p>
+                <a href="https://wa.me/254706390116" id="advice-cta" class="cta-button" style="display:none;">Consult a Vet on WhatsApp</a>
+            </div>
+        </div>
+    </div>
+</section>
+ 
+
+    <div class="container">
+        <div class="compact-layout">
+            <div class="services-mini-grid">
+                <div class="mini-card"><i>💊</i><span>Vet Supply</span></div>
+                <div class="mini-card"><i>🌱</i><span>Agri-Inputs</span></div>
+                <div class="mini-card"><i>🩺</i><span>Health Advice</span></div>
+                <div class="mini-card"><i>🔬</i><span>Crop Advisory</span></div>
+                <div class="mini-card"><i>🐄</i><span>Breeding/AI</span></div>
+                <div class="mini-card"><i>🎓</i><span>Education</span></div>
+                <div class="mini-card"><i>🛠️</i><span>Farm Tools</span></div>
+                <div class="mini-card"><i>🤝</i><span>Market Link</span></div>
+            </div>
+
+            <div class="compact-problem-box">
+                <div class="problem-header">
+                    <h4>Symptom Checker</h4>
+                </div>
+                <div class="scroll-area-mini">
+                    <button onclick="showSolution('mastitis')">Mastitis/Udder</button>
+                    <button onclick="showSolution('digestion')">Bloat/Feed</button>
+                    <button onclick="showSolution('repro')">Repeat Breeding</button>
+                    <button onclick="showSolution('weight')">Weight Gain</button>
+                </div>
+                <div id="solution-display" class="mini-result-box">Click a problem...</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="process-stack">
+    <div class="container">
+        <h2 class="section-title">The Sygad Pure Quality Standard</h2>
+        <div class="stack-wrapper">
+            <div class="stack-blade" style="--bg-image: url('FARMERS LINK IMAGES/product\ catalog\ 1.png.jpg');">
+                <div class="stack-content">
+                    <span class="stack-label">Step 01</span>
+                    <h3>Research & Formulation</h3>
+                    <p>Every product begins at Sygad Pure Chemical, where we balance trace minerals with live yeast for optimal rumen health.</p>
+                </div>
+            </div>
+            <div class="stack-blade" style="--bg-image: url('FARMERS LINK IMAGES/sizeable.png');">
+                <div class="stack-content">
+                    <span class="stack-label">Step 02</span>
+                    <h3>Controlled Production</h3>
+                    <p>We manufacture in small batches to ensure clinical-grade precision in every bag of feed and bottle of antiseptic.</p>
+                </div>
+            </div>
+            <div class="stack-blade" style="--bg-image: url('FARMERS LINK IMAGES/SUNSET\ COW.jpeg');">
+                <div class="stack-content">
+                    <span class="stack-label">Step 03</span>
+                    <h3>Direct Distribution</h3>
+                    <p>By cutting out the middleman, we deliver fresh, potent supplements directly to our Magadi Rd and Nakuru hubs.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="products catalogue-section" id="catalog">
+    <div class="container">
+        <h2 class="section-title" style="text-align: center; margin-bottom: 50px;">Best Sellers from Farmers Link</h2>
+        <div class="product-grid">
+            <div class="catalogue-card">
+                <div class="cat-img-box"><img src="FARMERS LINK IMAGES/spc dairy set.jpg.jpg" alt="The SPC Dairy Set"></div>
+                <div class="cat-content">
+                    <h3>THE SPC DAIRY SET</h3>
+                    <p class="product-desc">A complete nutritional package designed to boost milk let-down and improve overall cow health.</p>
+                </div>
+                <a href="https://wa.me/254706390116?text=I+am+interested+in+The+SPC+Dairy+Set" class="buy-green-bar">BUY</a>
+            </div>
+            <div class="catalogue-card">
+                <div class="cat-img-box"><img src="FARMERS LINK IMAGES/mastistop liquid.png.png" alt="Mastistop Spray"></div>
+                <div class="cat-content">
+                    <h3>MASTISTOP SPRAY</h3>
+                    <p class="product-desc">Clinical-grade post-milking antiseptic that creates a 12-hour protective barrier against Mastitis.</p>
+                </div>
+                <a href="https://wa.me/254706390116?text=I+am+interested+in+Mastistop+Spray" class="buy-green-bar">BUY</a>
+            </div>
+            <div class="catalogue-card">
+                <div class="cat-img-box"><img src="FARMERS LINK IMAGES/rumipetizer.jpg.jpg" alt="SPC Rumipetizer"></div>
+                <div class="cat-content">
+                    <h3>SPC RUMIPETIZER</h3>
+                    <p class="product-desc">Powerful digestive stimulant that optimizes rumen function for maximum feed conversion.</p>
+                </div>
+                <a href="https://wa.me/254706390116?text=I+am+interested+in+SPC+Rumipetizer" class="buy-green-bar">BUY</a>
+            </div>
+            <div class="catalogue-card">
+                <div class="cat-img-box"><img src="FARMERS LINK IMAGES/udder booster.jpg.jpg" alt="SPC Udder Booster"></div>
+                <div class="cat-content">
+                    <h3>SPC UDDER BOOSTER</h3>
+                    <p class="product-desc">Advanced formula that regenerates udder cells for longer lactation periods and higher quality milk.</p>
+                </div>
+                <a href="https://wa.me/254706390116?text=I+am+interested+in+SPC+Udder+Booster" class="buy-green-bar">BUY</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="view-all" style="text-align:center; padding-bottom: 50px;">
+    <a href="FARMERS LINK VET AGRO price list.pdf" download class="outline-btn">Download Full Price List (PDF)</a>
+</div>
+
+<section class="educational-white-strip">
+    <div class="container">
+        <div class="edu-header">
+            <h2 class="edu-main-title">The Science of Healthy Farming</h2>
+            <div class="edu-underline"></div>
+        </div>
+        <div class="edu-flex">
+            <div class="edu-column">
+                <div class="edu-icon-circle">🔬</div>
+                <h4>Clinical Prevention</h4>
+                <p>Post-milking hygiene is the #1 defense against Mastitis. Using a dedicated antiseptic spray like <strong>Mastistop</strong> creates a protective barrier for up to 12 hours.</p>
+            </div>
+            <div class="edu-column">
+                <div class="edu-icon-circle">⚖️</div>
+                <h4>Optimal Feed Mixing</h4>
+                <p>To maximize daily weight gain, combine 2kg of <strong>SPC Beef Set</strong> with high-quality maize germ. This ensures your livestock receives the exact ratio of trace minerals and live yeast needed for digestion.</p>
+            </div>
+            <div class="edu-column">
+                <div class="edu-icon-circle">🥛</div>
+                <h4>Yield Science</h4>
+                <p>Milk production depends on udder cell health. Supplements like <strong>SPC Udder Booster</strong> work by regenerating these cells, leading to longer lactation periods and higher quality milk.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="trust-bar">
+    <div class="container">
+        <div class="trust-grid">
+            <div class="trust-item"><strong>2+ Branches</strong><br>Rongai & Nakuru</div>
+            <div class="trust-item"><strong>Expert Support</strong><br>Vet Consultation</div>
+            <div class="trust-item"><strong>Trusted Quality</strong><br>Sygad Pure Certified</div>
+        </div>
+    </div>
+</section>
+
+<footer class="shop-footer">
+    <div class="container footer-layout">
+        <div class="footer-col">
+            <h4 class="footer-heading">FARMERS LINK VET AGRO</h4>
+            <p class="tagline">Smart Vet Products</p>
+            <p class="address"><i class="fas fa-map-marker-alt icon-style"></i> P.O. BOX 617-10200, MURANG'A</p>
+            <div class="footer-logo-small"><img src="FARMERS LINK IMAGES/farmers link logo.png.png" alt="SPC Logo"></div>
+        </div>
+        <div class="footer-col">
+            <h4 class="footer-heading">CONTACT CENTER</h4>
+            <ul class="contact-list">
+                <li><a href="tel:+254706390116"><i class="fas fa-phone-alt icon-style"></i> 0706-390116</a></li>
+                <li><a href="tel:+254727508240"><i class="fas fa-phone-alt icon-style"></i> 0727-508240</a></li>
+                <li><a href="https://wa.me/254706390116"><i class="fab fa-whatsapp icon-style"></i> WhatsApp Sales</a></li>
+                <li><a href="mailto:farmerslinkvet@gmail.com"><i class="fas fa-envelope icon-style"></i> farmerslinkvet@gmail.com</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4 class="footer-heading">OFFICIAL PLATFORMS</h4>
+            <div class="web-links">
+                <a href="http://www.farmerslinkvet.co.ke" target="_blank" class="web-link-item"><i class="fas fa-globe icon-style"></i> www.farmerslinkvet.co.ke</a>
+                <p class="footer-note">Providing specialized nutrition and clinical solutions for high-yield farming.</p>
+            </div>
+        </div>
+    </div>
+    <div class="copyright-strip"><div class="container"><p>&copy; 2026 Farmers Link Vet Agro. All Products Manufactured by Sygad Pure Chemicals.</p></div></div>
+</footer>
+
+<a href="https://wa.me/254706390116?text=Hello%20Farmers%20Link,%20I%20need%20assistance%20with..." class="whatsapp-sticky" id="wa-sticky" target="_blank">
+    <div class="wa-content">
+        <span class="wa-text">Need assistance? Chat with us now</span>
+        <i class="fab fa-whatsapp"></i>
+    </div>
+</a>
+
+<script>
+
+   
+    const slides = {
+        dairy: {
+            img: 'FARMERS LINK IMAGES/SUNSET COW.jpeg',
+            title: 'High-Yield Dairy Meals',
+            desc: 'Maximize your milk production with every feed.',
+            cta: 'Get Quality Feeds'
+        },
+        vet: {
+            img: 'FARMERS LINK IMAGES/Herd of cows grazing.jpeg',
+            title: 'Trusted Vet Solutions',
+            desc: 'Keep your livestock healthy and productive.',
+            cta: 'View Vet Supplies'
+        },
+        agro: {
+            img: 'FARMERS LINK IMAGES/spc heifer mineral suppliment.jpg.jpg',
+            title: 'Quality Agro-Inputs',
+            desc: 'The best seeds and fertilizers for your farm.',
+            cta: 'View Agro-Inputs'
+        }
+    };
+
+    let keys = Object.keys(slides);
+    let currentIndex = 0;
+
+    function updateHero(key, element) {
+        const data = slides[key];
+        
+        // Update main image and text
+        document.getElementById('main-hero-img').src = data.img;
+        document.getElementById('hero-title').innerText = data.title;
+        document.getElementById('hero-desc').innerText = data.desc;
+        document.getElementById('hero-cta').innerText = data.cta;
+
+        // Manage Active Classes
+        document.querySelectorAll('.controller-card').forEach(card => card.classList.remove('active'));
+        if (element) element.classList.add('active');
+    }
+
+    // Auto-Rotation logic
+    setInterval(() => {
+        currentIndex = (currentIndex + 1) % keys.length;
+        let nextKey = keys[currentIndex];
+        // Select the card by index
+        let cards = document.querySelectorAll('.controller-card');
+        updateHero(nextKey, cards[currentIndex]);
+    }, 5000);
+const expertAdvice = {
+    mastitis: {
+        title: "Mastitis & Udder Care",
+        text: "Clean the udder thoroughly. Use an antiseptic teat dip immediately after milking. We recommend our Mastistop Spray for a 12-hour barrier.",
+        cta: true
+    },
+    bloat: {
+        title: "Bloat & Digestion",
+        text: "Bloat is often caused by excess gas. Ensure proper fiber intake. We recommend SPC Rumipetizer to stabilize rumen pH and improve digestion.",
+        cta: true
+    },
+    fever: {
+        title: "Fever / Appetite",
+        text: "Fever is often a sign of underlying infection. Isolate the animal and monitor temperature. Contact our team immediately for clinical intervention.",
+        cta: true
+    },
+    weight: {
+        title: "Weight Gain Issues",
+        text: "Slow growth often stems from mineral deficiencies. Our SPC Beef Set is formulated to balance trace minerals and boost feed conversion.",
+        cta: true
+    }
+};
+
+function checkSymptom(symptom) {
+    const data = expertAdvice[symptom];
+    document.getElementById('advice-title').innerText = data.title;
+    document.getElementById('advice-text').innerText = data.text;
+    const cta = document.getElementById('advice-cta');
+    cta.style.display = data.cta ? 'inline-block' : 'none';
+}
+    // Mobile Menu & Scroll Logic
+    document.addEventListener('DOMContentLoaded', function() {
+        const menuBtn = document.getElementById('mobile-menu');
+        const navList = document.getElementById('nav-list');
+        if (menuBtn && navList) {
+            menuBtn.addEventListener('click', () => {
+                navList.classList.toggle('active');
+                const icon = menuBtn.querySelector('i');
+                icon.classList.toggle('fa-bars');
+                icon.classList.toggle('fa-times');
+            });
+        }
+    });
+
+    window.onscroll = function() {
+        const waBtn = document.getElementById('wa-sticky');
+        if (waBtn) {
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                waBtn.style.display = "block";
+            } else {
+                waBtn.style.display = "none";
+            }
+        }
+    };
+</script>
+</body>
+</html>

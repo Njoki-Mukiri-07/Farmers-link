@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details | Farmers Link Vet Agro</title>
+    <link rel="stylesheet" href="Products.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Specific Styles for the Detail Page */
+        .detail-container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 30px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            background: #fff;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .image-gallery {
+            background: #f9f9f9;
+            border-radius: 15px;
+            padding: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #eee;
+        }
+
+        .main-product-img {
+            max-width: 100%;
+            max-height: 450px;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+        
+        .main-product-img:hover {
+            transform: scale(1.05);
+        }
+
+        .product-info-box h1 {
+            font-size: 2.2rem;
+            color: #1B4332;
+            margin-bottom: 10px;
+        }
+
+        .category-tag {
+            color: #e2b17a;
+            text-transform: uppercase;
+            font-weight: 800;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+        }
+
+        .price-display {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #2d6a4f;
+            margin: 20px 0;
+        }
+
+        .description-text {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            font-size: 1.05rem;
+        }
+
+        .selector-label {
+            font-weight: 700;
+            display: block;
+            margin-bottom: 12px;
+            color: #333;
+        }
+
+        .variant-options {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .variant-btn {
+            padding: 12px 20px;
+            border: 2px solid #ddd;
+            background: white;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 700;
+            transition: 0.3s;
+        }
+
+        .variant-btn.active {
+            border-color: #2d6a4f;
+            background: #f0fdf4;
+            color: #2d6a4f;
+        }
+
+        .whatsapp-btn-full {
+            background: #25D366;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 10px;
+            font-weight: 800;
+            width: 100%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-size: 1.1rem;
+            transition: 0.3s;
+        }
+
+        .whatsapp-btn-full:hover {
+            background: #128C7E;
+            transform: translateY(-2px);
+        }
+
+        .related-header {
+            max-width: 1100px;
+            margin: 60px auto 20px;
+            padding: 0 20px;
+            font-size: 1.8rem;
+            color: #1B4332;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .related-header::after {
+            content: "";
+            flex: 1;
+            height: 2px;
+            background: #e2b17a;
+        }
+
+        @media (max-width: 768px) {
+            .detail-container { grid-template-columns: 1fr; gap: 30px; margin: 20px; }
+            .product-info-box h1 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="top-bar">
+    <div class="top-bar-container">
+        <div class="contact-info">
+            <span class="contact-item"><i class="fas fa-envelope"></i> <a href="mailto:farmerslinkvet@gmail.com">farmerslinkvet@gmail.com</a></span>
+            <span class="contact-item"><i class="fas fa-phone"></i> <a href="tel:+254706390116">+254 706 390116</a></span>
+        </div>
+    </div>
+</div>
+
+<header class="navbar">
+    <div class="logo-container">
+        <a href="Index.html"><img src="FARMERS LINK IMAGES/farmers link logo.png.png" alt="Logo" class="logo-img"></a>
+        <div class="logo-text">
+            <span class="brand">FARMERS LINK</span>
+        </div>
+    </div>
+    
+    <div class="nav-right">
+        <nav class="nav-links" id="nav-list">
+            <a href="Index.html">Home</a>
+            <a href="Products.html">Our Products</a>
+            <a href="mailto:farmerslinkvet@gmail.com">Contact</a>
+        </nav>
+        
+        <div class="quote-trigger" onclick="document.getElementById('quote-modal').style.display='flex'">
+            <i class="fas fa-shopping-basket"></i>
+            <span class="badge" id="quote-count">0</span>
+        </div>
+
+        <button class="mobile-menu" id="mobile-menu">
+            <i class="fas fa-bars"></i>
+        </button>
+    </div>
+</header>
+
+<div class="detail-container">
+    <div class="image-gallery">
+        <img id="main-img" src="" alt="Product Image" class="main-product-img" onerror="this.src='placeholder.png'">
+    </div>
+
+    <div class="product-info-box">
+        <span class="category-tag" id="prod-tag">Loading...</span>
+        <h1 id="prod-name">Product Name</h1>
+        
+        <div class="price-display" id="prod-price">Ksh 0</div>
+        
+        <p class="description-text" id="prod-desc">
+            Product description loading...
+        </p>
+
+        <span class="selector-label">Choose Amount/Size:</span>
+        <div class="variant-options" id="variant-area">
+            </div>
+
+        <div class="action-btns">
+            <button class="whatsapp-btn-full" onclick="orderOnWhatsApp()">
+                <i class="fab fa-whatsapp"></i> ORDER VIA WHATSAPP
+            </button>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <h3 class="related-header">Related Products</h3>
+    <div class="modern-grid" id="related-grid" style="max-width: 1100px; margin: 0 auto 50px;">
+        </div>
+</div>
+
+<footer class="shop-footer">
+    <div class="copyright-strip">
+        <p>&copy; 2026 Farmers Link Vet Agro. Quality Livestock Solutions.</p>
+    </div>
+</footer>
+
+<div id="quote-modal" class="modal-overlay" style="display:none;">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3>Your Selected Items (<span id="summary-count">0</span>)</h3>
+            <i class="fas fa-times close-modal" onclick="document.getElementById('quote-modal').style.display='none'"></i>
+        </div>
+        <div id="quote-items-list" class="modal-body">
+            </div>
+        <div class="modal-footer">
+            <div class="total-row">
+                <span>Estimated Total:</span>
+                <span id="quote-total-price">Ksh 0</span>
+            </div>
+            <button class="whatsapp-btn-full" onclick="checkoutWhatsApp()">
+                <i class="fab fa-whatsapp"></i> SEND LIST TO WHATSAPP
+            </button>
+        </div>
+    </div>
+</div>
+
+<script src="Products.js"></script>
+<script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const productId = urlParams.get('id');
+    const product = allProducts.find(p => p.id === productId);
+    let selectedVariantIndex = 0;
+
+    if (product) {
+        document.title = `${product.name} | Farmers Link`;
+        document.getElementById('prod-name').innerText = product.name;
+        document.getElementById('prod-tag').innerText = product.tag;
+        document.getElementById('prod-desc').innerText = product.desc;
+        document.getElementById('main-img').src = "FARMERS LINK IMAGES/" + product.img;
+
+        const variantArea = document.getElementById('variant-area');
+        product.variants.forEach((v, index) => {
+            const btn = document.createElement('button');
+            btn.className = `variant-btn ${index === 0 ? 'active' : ''}`;
+            btn.innerText = v.size;
+            btn.onclick = () => {
+                selectedVariantIndex = index;
+                document.querySelectorAll('.variant-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                updatePriceDisplay();
+            };
+            variantArea.appendChild(btn);
+        });
+
+        updatePriceDisplay();
+        renderRelated(product.cat);
+    } else {
+        window.location.href = "Products.html";
+    }
+
+    function updatePriceDisplay() {
+        const price = product.variants[selectedVariantIndex].price;
+        document.getElementById('prod-price').innerText = `Ksh ${price.toLocaleString()}`;
+    }
+
+    function renderRelated(category) {
+        const grid = document.getElementById('related-grid');
+        // Filter products in same category, exclude current, limit to 4
+        const related = allProducts.filter(p => p.cat === category && p.id !== productId).slice(0, 4);
+        
+        grid.innerHTML = '';
+        related.forEach(p => {
+            const v = p.variants[0];
+            grid.innerHTML += `
+                <div class="product-card">
+                    <div class="img-box">
+                        <img src="FARMERS LINK IMAGES/${p.img}" onerror="this.src='placeholder.png'">
+                    </div>
+                    <div class="card-info">
+                        <span class="tag">${p.tag}</span>
+                        <h3>${p.name}</h3>
+                        <div class="price-row">
+                            <span class="price">Ksh ${v.price}</span>
+                            <span class="unit">${v.size}</span>
+                        </div>
+                        <a href="Product-Category.html?id=${p.id}" class="order-btn">View Details</a>
+                    </div>
+                </div>
+            `;
+        });
+    }
+
+    function orderOnWhatsApp() {
+        const variant = product.variants[selectedVariantIndex];
+        const message = `*Single Product Inquiry*\n\nProduct: ${product.name}\nSize: ${variant.size}\nPrice: Ksh ${variant.price}\n\nIs this available for delivery?`;
+        window.open(`https://wa.me/254706390116?text=${encodeURIComponent(message)}`);
+    }
+
+    // Shared Checkout function for the modal
+    function checkoutWhatsApp() {
+        if (quoteList.length === 0) return alert("Your list is empty!");
+        let text = "*My Order List from Farmers Link Website:*\n\n";
+        let total = 0;
+        quoteList.forEach((item, i) => {
+            text += `${i + 1}. ${item.name} (${item.size}) - Ksh ${item.price}\n`;
+            total += item.price;
+        });
+        text += `\n*Estimated Total: Ksh ${total.toLocaleString()}*`;
+        window.open(`https://wa.me/254706390116?text=${encodeURIComponent(text)}`);
+    }
+</script>
+
+</body>
+</html>
