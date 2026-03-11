@@ -1,0 +1,577 @@
+:root {
+    --primary-green: #1B4332;
+    --dark-green: #002813;
+    --accent-gold: #e2b17a;
+    --white: #ffffff;
+    --gray-bg: #f8f9fa;
+    --border-gray: #e5e7eb;
+    --text-main: #333;
+}
+
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    scroll-behavior: smooth; 
+}
+
+body {
+    background-color: var(--white);
+    color: var(--text-main);
+    overflow-x: hidden; /* Prevents the whole page from sliding sideways */
+}
+
+/* --- Navigation & Top Bar --- */
+.top-bar { background-color: #fdf5e6; padding: 8px 5%; border-bottom: 1px solid rgba(0,0,0,0.1); }
+.top-bar-container { display: flex; justify-content: flex-end; }
+.contact-info { display: flex; gap: 20px; }
+.contact-item, .contact-item a { font-size: 0.8rem; font-weight: 600; color: var(--primary-green); text-decoration: none; }
+
+.navbar { 
+    background-color: var(--dark-green); /* This will now work! */
+    padding: 1.2rem 5%; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Ensure brand and slogan are readable */
+.brand { 
+    color: var(--accent-gold); 
+    font-weight: 800; 
+    font-size: 1.1rem; 
+    letter-spacing: 1px;
+}
+
+.slogan { 
+    color: #fff; 
+    font-size: 0.65rem; 
+    font-weight: 600; 
+    letter-spacing: 2px;
+}
+.top-bar {
+    background-color: #fdf5e6; /* Matches the button/background cream color */
+    padding: 8px 10%;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    width: 100%;
+}
+
+.top-bar-container {
+    display: flex;
+    justify-content: flex-end; /* Aligns content to the right side */
+    align-items: center;
+}
+
+.contact-info {
+    display: flex;
+    gap: 25px; /* Space between email and phone */
+}
+
+.contact-item {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #1B4332; /* Professional Deep Green */
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.contact-item a {
+    color: #1B4332;
+    text-decoration: none;
+    transition: opacity 0.3s;
+}
+
+.contact-item a:hover {
+    opacity: 0.7;
+}
+
+.navbar { 
+    background: var(--dark-green); 
+    padding: 1.2rem 5%; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-img { height: 50px; }
+
+.logo-text { display: flex; flex-direction: column; }
+
+.brand { 
+    color: var(--accent-gold); 
+    font-weight: 800; 
+    font-size: 1.1rem; 
+    letter-spacing: 1px;
+}
+
+.slogan { 
+    color: #fff; 
+    font-size: 0.65rem; 
+    font-weight: 600; 
+    letter-spacing: 2px;
+}
+
+.nav-links a { 
+    color: #fff; 
+    text-decoration: none; 
+    margin-left: 25px; 
+    font-size: 0.9rem; 
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.nav-links a.active, 
+.nav-links a:hover { 
+    color: var(--accent-gold); 
+}
+
+/* Navigation Desktop View (Default) */
+.menu-toggle {
+    display: none; /* Hide hamburger on desktop */
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* --- Mobile Navigation Logic --- */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block; /* Show hamburger on mobile */
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 70px; /* Sits right under the navbar */
+        right: -100%; /* Hidden off-screen to the right */
+        background-color: var(--dark-green);
+        width: 70%;
+        height: 100vh;
+        flex-direction: column; /* Stack links vertically */
+        align-items: flex-start !important;
+        padding: 40px 20px;
+        transition: 0.4s ease;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.3);
+    }
+
+    /* When the menu is active/open */
+    .nav-links.active {
+        right: 0; /* Slide into view */
+    }
+
+    .nav-links a {
+        margin: 15px 0 !important;
+        font-size: 1.1rem !important;
+        width: 100%;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+        padding-bottom: 10px;
+    }
+}
+@media (max-width: 768px) {
+    /* This target ensures the container stacks vertically */
+    .nav-links.active {
+        display: flex !important;
+        flex-direction: column !important; /* Forces vertical list */
+        align-items: flex-start !important; /* Aligns links to the left */
+        justify-content: flex-start !important;
+        padding-top: 50px !important;
+    }
+
+    /* This styles the individual links as list items */
+    .nav-links a {
+        display: block !important; /* Makes each link a full-width block */
+        width: 100% !important;
+        padding: 15px 20px !important; /* Adds space for tapping */
+        margin: 0 !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Subtle divider line */
+        text-align: left !important;
+        font-size: 1.1rem !important;
+        color: white !important;
+        text-decoration: none !important;
+    }
+
+    /* Adds a nice hover effect for the list items */
+    .nav-links a:hover {
+        background: rgba(255, 255, 255, 0.1);
+        color: var(--accent-gold) !important;
+    }
+}
+
+/* --- Search & Filter Bar --- */
+.search-filter-bar { background: var(--gray-bg); padding: 20px 5%; border-bottom: 1px solid var(--border-gray); }
+.search-container { 
+    max-width: 1200px; 
+    margin: 0 auto; 
+    display: flex; 
+    background: #fff; 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05); 
+    border-radius: 10px; 
+    overflow: hidden; 
+}
+.category-select select { padding: 15px; border: none; font-weight: 600; color: var(--primary-green); border-right: 1px solid var(--border-gray); outline: none; background: #fff; }
+.search-input-wrapper { flex-grow: 1; display: flex; }
+.search-input-wrapper input { width: 100%; padding: 15px; border: none; outline: none; }
+.search-btn { background: white; border: none; padding: 0 15px; color: var(--primary-green); cursor: pointer; }
+.quote-btn-main { background: var(--primary-green); color: white; border: none; padding: 0 25px; font-weight: 800; cursor: pointer; transition: 0.3s; }
+.quote-btn-main:hover { background: var(--dark-green); }
+
+/* --- Layout Wrapper (The Professional Fix) --- */
+.product-layout-wrapper {
+    display: flex;
+    max-width: 1400px;
+    margin: 30px auto;
+    gap: 40px;
+    padding: 0 5%;
+    align-items: flex-start;
+}
+
+.sticky-sidebar { 
+    width: 260px; 
+    position: sticky; 
+    top: 100px; 
+    background: #fff; 
+    border: 1px solid var(--border-gray); 
+    border-radius: 12px; 
+    padding: 20px; 
+    flex-shrink: 0;
+}
+.sticky-sidebar h3 { font-size: 1.1rem; margin-bottom: 15px; color: var(--dark-green); border-bottom: 2px solid var(--accent-gold); display: inline-block; }
+.sidebar-nav a { display: block; padding: 10px 15px; text-decoration: none; color: #555; font-weight: 600; font-size: 0.9rem; border-radius: 6px; margin-bottom: 5px; transition: 0.2s; }
+.sidebar-nav a:hover { background: #f0fdf4; color: var(--primary-green); padding-left: 20px; }
+
+/* --- The Independent Scroll Grid --- */
+.feed-content {
+    flex: 1;
+    min-width: 0; /* CRITICAL: Allows children to overflow-x without breaking the parent flexbox */
+}
+
+.category-block { margin-bottom: 40px; }
+.section-heading { font-size: 1.4rem; color: var(--dark-green); margin-bottom: 15px; padding-left: 5px; border-left: 4px solid var(--accent-gold); padding-left: 15px; }
+/* --- Mobile Optimization (Bed Palace Style) --- */
+@media (max-width: 768px) {
+    /* Allow the page to scroll naturally */
+    .product-layout-wrapper {
+        flex-direction: column;
+        padding: 0 10px; 
+    }
+
+    /* Make the horizontal categories a scrollable "tab" menu at the top */
+    .sticky-sidebar {
+        width: 100%;
+        position: sticky;
+        top: 60px; /* Adjust based on your navbar height */
+        z-index: 999;
+        background: white;
+        padding: 10px 0;
+        overflow-x: auto;
+        display: block;
+        border-bottom: 1px solid #eee;
+    }
+
+    .sidebar-nav {
+        display: flex;
+        gap: 10px;
+        padding: 0 10px;
+    }
+
+    .sidebar-nav a {
+        flex: 0 0 auto; /* Stops tabs from shrinking */
+        background: #f4f4f4;
+        padding: 8px 15px;
+        border-radius: 20px;
+        font-size: 0.85rem;
+    }
+
+    /* CHANGE: Change horizontal scroll to a 2-column vertical grid */
+    .modern-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* 2 items per row */
+        gap: 12px;
+        overflow-x: visible; /* Disable horizontal scroll */
+        padding: 10px 0;
+    }
+
+    /* Make product cards fill the half-screen width */
+    .product-card {
+        min-width: 0; /* Important: allows grid to control width */
+        max-width: 100%;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .img-box {
+        height: 160px; /* Adjusted for mobile view */
+    }
+
+    .card-info h3 {
+        font-size: 0.9rem;
+        min-height: 40px;
+    }
+}
+.category-block {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-bottom: 8px solid #f9f9f9; /* Visual separator like Bed Palace */
+}
+.modern-grid { 
+    display: flex; 
+    overflow-x: auto; /* Only this row scrolls */
+    gap: 20px; 
+    padding: 10px 5px 25px; 
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+}
+
+/* Custom Scrollbar for the Grids */
+.modern-grid::-webkit-scrollbar { height: 6px; }
+.modern-grid::-webkit-scrollbar-track { background: #f1f1f1; border-radius: 10px; }
+.modern-grid::-webkit-scrollbar-thumb { background: var(--accent-gold); border-radius: 10px; }
+
+/* --- Product Cards --- */
+.product-card { 
+    min-width: 270px; 
+    max-width: 270px; 
+    scroll-snap-align: start;
+    background: #fff; 
+    border: 1px solid var(--border-gray); 
+    border-radius: 15px; 
+    overflow: hidden; 
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+.product-card:hover { transform: translateY(-8px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); border-color: var(--primary-green); }
+
+.img-box { height: 200px; background: #fff; padding: 15px; display: flex; align-items: center; justify-content: center; position: relative; }
+.img-box img { max-width: 100%; max-height: 100%; object-fit: contain; }
+
+.add-quote-btn {
+    position: absolute; top: 12px; right: 12px;
+    background: var(--primary-green); color: white; border: none;
+    width: 35px; height: 35px; border-radius: 50%; cursor: pointer;
+    z-index: 5; transition: 0.3s; display: flex; align-items: center; justify-content: center;
+}
+.add-quote-btn:hover { background: var(--accent-gold); transform: scale(1.1); }
+
+.card-info { padding: 15px; flex-grow: 1; display: flex; flex-direction: column; }
+.tag { font-size: 0.65rem; font-weight: 800; color: var(--primary-green); background: #e7f5ee; padding: 4px 10px; border-radius: 20px; align-self: flex-start; margin-bottom: 8px; }
+.card-info h3 { font-size: 1rem; color: var(--dark-green); margin-bottom: 8px; line-height: 1.3; min-height: 2.6em; }
+.card-info p { font-size: 0.8rem; color: #666; line-height: 1.4; margin-bottom: 12px; }
+
+/* --- Quote Modal Styles --- */
+.quote-modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); backdrop-filter: blur(5px); }
+.quote-modal-content { background: #fff; margin: 5% auto; width: 95%; max-width: 500px; border-radius: 16px; overflow: hidden; animation: slideIn 0.3s ease-out; }
+
+@keyframes slideIn { from { transform: translateY(30px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+
+.quote-header { background: var(--primary-green); color: white; padding: 20px; display: flex; justify-content: space-between; align-items: center; }
+.close-modal { cursor: pointer; font-size: 28px; font-weight: bold; }
+
+.quote-items-container { max-height: 400px; overflow-y: auto; padding: 10px; }
+.remove-item-btn { color: #e63946; cursor: pointer; transition: 0.2s; padding: 5px; }
+.remove-item-btn:hover { transform: scale(1.2); }
+
+.quote-footer { padding: 20px; border-top: 1px solid #eee; background: #fcfcfc; }
+.quote-summary { display: flex; justify-content: space-between; margin-bottom: 15px; font-size: 1rem; }
+.whatsapp-btn-full { background: #25D366; color: white; border: none; width: 100%; padding: 15px; border-radius: 10px; font-weight: 800; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px; transition: 0.3s; }
+.whatsapp-btn-full:hover { background: #1ebd5b; transform: translateY(-2px); box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3); }
+
+/* --- Footer --- */
+.shop-footer {
+    background-color: #002813; /* Your Deep Green/Dark Blue */
+    color: #fdf5e6;
+    padding: 60px 0 0;
+    border-top: 4px solid #e2b17a; /* Gold Accent from PDF logo */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.footer-layout {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding-bottom: 40px;
+}
+
+.footer-col {
+    flex: 1;
+    min-width: 250px;
+}
+
+.footer-heading {
+    color: #e2b17a;
+    font-size: 1.1rem;
+    letter-spacing: 1.5px;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+/* Red underline like a stamp or physical mark */
+.footer-heading::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 40px;
+    height: 2px;
+    background-color: #e2b17a;
+}
+
+.tagline {
+    font-style: italic;
+    margin-bottom: 15px;
+    opacity: 0.9;
+}
+
+.contact-list {
+    list-style: none;
+    padding: 0;
+}
+
+.contact-list li {
+    margin-bottom: 12px;
+}
+
+.contact-list a {
+    color: #fdf5e6;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.3s;
+}
+
+.contact-list a:hover {
+    color: #e2b17a;
+}
+
+.web-link-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #e2b17a;
+    text-decoration: none;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.footer-note {
+    font-size: 0.85rem;
+    line-height: 1.6;
+    opacity: 0.7;
+}
+
+.copyright-strip {
+    background-color: #fdf5e6; /* Your dark background */
+    color: #1B4332;           /* Your dark green text color */
+    font-weight: 500;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 0.8rem;
+    border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.footer-logo-small img {
+    height: 50px;
+    margin-top: 15px;
+    filter: grayscale(1) brightness(1.5); /* Makes it look like a clean stamp */
+}
+
+@media (max-width: 768px) {
+    .product-layout-wrapper { flex-direction: column; padding: 0 15px; gap: 20px; }
+    
+    .sticky-sidebar { 
+        width: 100%; 
+        position: relative; 
+        top: 0; 
+        padding: 10px; 
+        overflow-x: auto; 
+        white-space: nowrap; 
+        border: none;
+        background: transparent;
+    }
+    .sticky-sidebar h3 { display: none; }
+    .sidebar-nav { display: flex; gap: 10px; }
+    .sidebar-nav a { display: inline-block; background: #fff; border: 1px solid var(--border-gray); padding: 8px 15px; }
+
+    .search-container { flex-direction: column; }
+    .category-select select { border-right: none; border-bottom: 1px solid var(--border-gray); width: 100%; }
+    .quote-btn-main { padding: 15px; width: 100%; }
+
+    .product-card { min-width: 230px; max-width: 230px; }
+    .section-heading { font-size: 1.2rem; }
+}
+
+/* --- Product Detail Specifics (Product-Category.html) --- */
+.detail-wrapper { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
+.variant-btn { 
+    border: 1px solid var(--border-gray); 
+    background: white; 
+    padding: 10px 18px; 
+    margin: 5px; 
+    cursor: pointer; 
+    border-radius: 8px; 
+    font-weight: 600; 
+    transition: 0.2s; 
+}
+.variant-btn.active { background: var(--primary-green); color: white; border-color: var(--primary-green); }
+.detail-price { font-size: 1.8rem; font-weight: 800; color: var(--primary-green); margin: 15px 0; }
+/* GLOBAL MOBILE STYLES (Applies to all pages) */
+@media (max-width: 768px) {
+    /* 1. Prevent the "Wobble" - Ensure the whole page stays centered */
+    html, body {
+        overflow-x: hidden;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* 2. Container Standardizing - Make content fill the screen properly */
+    .container, .footer-layout, .detail-container {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+        width: 100% !important;
+    }
+
+    /* 3. The 2-Column Grid (Bed Palace Style) */
+    /* This target applies to any grid you want to stack vertically */
+    .modern-grid, .services-mini-grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important; /* Forces 2 items per row */
+        gap: 12px !important;
+        overflow-x: visible !important; /* Disables horizontal scrolling */
+    }
+
+    /* 4. Make Cards Full-Width within their grid cells */
+    .product-card, .mini-card {
+        width: 100% !important;
+        min-width: 0 !important;
+        margin: 0 0 10px 0 !important;
+    }
+
+    /* 5. Sticky Navigation Bar (Tabs) */
+    .sticky-sidebar {
+        position: sticky;
+        top: 60px; /* Adjust to stay below your navbar */
+        background: white;
+        z-index: 100;
+        display: flex !important;
+        overflow-x: auto;
+        padding: 10px 5px;
+        border-bottom: 2px solid var(--accent-gold);
+    }
+}
